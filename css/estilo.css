@@ -1,0 +1,175 @@
+html, body {   
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-decoration: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "cabecalho"
+        "conteudo"
+        "rodape";
+    grid-template-columns: auto;
+    grid-template-rows: 70px 1fr auto;
+}
+
+
+#cabecalho {
+    grid-area: cabecalho;
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+    background-color: lightgray;
+    align-items:center;
+
+}
+
+.cabecalho__menu___link {
+    color: lightslategray;
+    font-weight: bold;
+    padding: 0 1.5rem;
+    text-decoration: none;
+}
+.cabecalho__menu___link:hover {
+    color: #ba181b;
+    border-top: 1px solid #ba181b;
+}
+.cabecalho__menu___link.ativo {
+    color: #ba181b;
+    border-top: 1px solid #ba181b;
+}
+
+
+
+
+.conteudo {
+    grid-area: conteudo;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.galeria {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.foto {
+    position: absolute;
+    opacity: 0;
+    animation-name: animacao;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    width: 100%;
+}
+
+.foto__bg {
+    position: absolute;
+    opacity: 0;
+    animation-name: animacaoBg;
+    animation-duration: 5s;
+    animation-iteration-count: initial;
+    width: 100%;
+}
+
+.foto__bg:nth-child(1) {
+    animation-delay: 5s;
+    
+}
+@keyframes animacaoBg {
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+.foto:nth-child(1) {
+    animation-delay: 4s;
+}
+.foto:nth-child(2) {
+    animation-delay: 8s;
+}
+.foto:nth-child(3) {
+    animation-delay: 12s;
+}
+.foto:nth-child(4) {
+    animation-delay: 16s;
+}
+.foto:nth-child(5) {
+    animation-delay: 20s;
+}
+@keyframes animacao {
+    25%{opacity: 1;}
+    30%{opacity: 0;}
+}
+
+
+.bancos {
+    display: flex;
+    justify-content: center;        
+ }
+ .bancos__lista {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr; 
+     list-style: none;
+ }
+ .banco__links { 
+     transition-duration: 1s;  
+     margin: 0.1rem;  
+ }
+ .banco__links .links {
+     visibility: hidden;  
+     list-style: none;
+     padding: 0;
+     margin-bottom: 5px;
+ }
+ .links a{
+     display: block;
+     color: #fdfdfd;
+     font-weight: bold;
+     text-decoration: none;
+     text-align: center;
+ }
+ .links a:hover{
+     background-color: #fdfdfd;
+     color:  #ba181b;
+ }
+ .banco__links:hover,
+ .banco__links:focus-within{
+     background-color: #ba181b;
+     border-radius: 10px;
+     text-decoration: none;
+     cursor: pointer;
+     color: #fdfdfd;
+     transition: 0.3s;
+ }
+ .bancos__lista .banco__links:hover>.links,
+ .bancos__lista .banco__links:focus-within>.links,
+ .bancos__lista .banco__links:hover,
+ .bancos__lista .banco__links:focus{
+     visibility: visible;
+     opacity: 1;
+ }
+
+
+.rodape {
+    grid-area: rodape;
+    font-size: 0.6rem;
+    text-align: center;
+    background-color:lightgray; 
+    align-self: baseline;
+    position: relative;
+
+}
+
+.contato {  
+    margin-top: 0;
+    font-size: 1rem;
+    background-color: rgb(167, 169, 170);
+}

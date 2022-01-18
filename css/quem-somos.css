@@ -1,0 +1,93 @@
+html, body {   
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-decoration: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "cabecalho"
+        "conteudo"
+        "rodape";
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr auto;
+}
+
+
+#cabecalho {
+    grid-area: cabecalho;
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+    background-color: lightgray;
+    align-items:center;
+
+}
+
+.cabecalho__menu___link {
+    color: lightslategray;
+    font-weight: bold;
+    padding: 0 1.5rem;
+    text-decoration: none;
+}
+.cabecalho__menu___link:hover {
+    color: #ba181b;
+    border-top: 1px solid #ba181b;
+}
+.cabecalho__menu___link.ativo {
+    color: #ba181b;
+    border-top: 1px solid #ba181b;
+}
+
+.conteudo {
+    grid-area: conteudo;
+    width: 100%;
+    align-self: center;
+}
+
+.quemSomos{ 
+    display: flex;
+    align-items: center;
+}
+
+.quemSomos__foto {
+    background-image: url(../img/blog-img-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 40em;
+
+
+}
+.quemSomos__txt {
+    font-size: 1.5em;
+    text-align: justify;
+    padding: 0 2rem;
+    
+    
+}
+
+
+.rodape {
+    grid-area: rodape;
+    
+    font-size: 0.6rem;
+    text-align: center;
+    background-color:lightgray; 
+    align-self: baseline;
+    position: relative;
+
+}
+
+.contato {  
+    margin-top: 0;
+    font-size: 1rem;
+    background-color: rgb(167, 169, 170);
+}
+
+
+
