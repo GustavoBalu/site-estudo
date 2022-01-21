@@ -1,0 +1,123 @@
+html, body {   
+    margin: 0;
+    padding: 0;
+    text-decoration: none;   
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "cabecalho"
+        "conteudo"
+        "rodape";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    width: 100%;
+}
+
+#cabecalho {
+    grid-area: cabecalho;
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+    background-color: lightgray;
+    padding: 1rem;
+    align-items:center;
+
+}
+.cabecalho__menu___link {
+    color: lightslategray;
+    font-weight: bold;
+    padding: 0 1.5rem;
+}
+.cabecalho__menu___link:hover {
+    color: maroon;
+    border-top: 1px solid maroon;
+}
+.cabecalho__menu___link.ativo {
+    color: maroon;
+    border-top: 1px solid maroon;
+}
+
+
+
+
+.conteudo {
+    grid-area: conteudo;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+
+
+.bancos {
+   display: flex;
+   justify-content: center;        
+}
+.bancos__lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    list-style: none;
+}
+.banco__links { 
+    transition-duration: 1s;  
+    margin: 10px;  
+}
+.banco__links .links {
+    visibility: hidden;  
+    list-style: none;
+    padding: 0;
+    margin-bottom: 5px;
+}
+.links a{
+    display: block;
+    color: #fdfdfd;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+.links a:hover{
+    background-color: #fdfdfd;
+    color:  rgb(247, 11, 11);
+}
+.banco__links:hover,
+.banco__links:focus-within{
+    background-color: rgb(247, 11, 11);
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fdfdfd;
+    transition: 0.3s;
+}
+.bancos__lista .banco__links:hover>.links,
+.bancos__lista .banco__links:focus-within>.links,
+.bancos__lista .banco__links:hover,
+.bancos__lista .banco__links:focus{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+
+.contato {
+    height: 100px;
+    padding: 15px 0 0 0;
+    font-size: 1rem;
+    background-color: rgb(167, 169, 170);
+    
+}
+.rodape {
+    grid-area: rodape;
+    font-size: 0.6rem;
+    display: block;
+    text-align: center;
+    background-color:lightgray; 
+    margin-bottom: 5px;  
+    
+}
