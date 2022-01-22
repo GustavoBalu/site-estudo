@@ -24,14 +24,19 @@ html, body {
 /* INICIO CABEÇALHO */
 #cabecalho {
     grid-area: cabecalho;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 10%;
+    display: flex; 
+    position: relative;
+    width: 100%;
+    padding: 10px 5%;
     height: 70px;
+
     background-color: lightgray;
     align-items:center;
 }
 
+.cabecalho__menu{
+    margin-left: auto;
+}
 .cabecalho__menu___link {
     color: lightslategray;
     font-weight: bold;
@@ -47,11 +52,15 @@ html, body {
     color: #ba181b;
     border-top: 1px solid #ba181b;
 }
+#btn-check,#btn-menu{
+    visibility: hidden;
+    
+} 
 
 .conteudo {
     grid-area: conteudo;
-    width: 100%;
-    align-self: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .quemSomos{ 
@@ -93,5 +102,69 @@ html, body {
 }
 /* FIM RODAPÉ */
 
+@media screen and (max-width: 800px) {
 
+    #cabecalho {
+        justify-content: flex-start;
+    }
+    .cabecalho__menu{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items: flex-end;
+        left: 0;
+        background-color: lightgray;
+        z-index: 1;
+        top:70px;
+        visibility: hidden;
+        width: 100%;
+        line-height: 2rem;
+        padding: 5px;
+    }
+
+
+    #btn-menu {
+        position: absolute;
+        visibility: visible;
+        font-size: 2rem;
+        margin-right: 10px;
+        right: 0;
+    }
+    #btn-menu:hover{
+        color: #ba181b;
+        cursor: pointer;
+    }
+    #btn-check:checked ~ .cabecalho__menu{
+        visibility: visible;
+        right: 0;
+    } 
+
+    .galeria {
+       height: 300px;
+    }
+
+    .foto, .foto__bg{
+        background-position: center;
+    }
+
+    .bancos{
+        width: 100%;
+    }
+    .bancos__lista {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .links a{
+        line-height: 2.5rem;
+    }
+    
+    .quemSomos {
+        flex-direction: column-reverse;
+        margin-top: 10px;
+    }
+    
+}
 

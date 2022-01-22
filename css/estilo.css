@@ -24,20 +24,25 @@ html, body {
 /* INICIO CABEÇALHO */
 #cabecalho {
     grid-area: cabecalho;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 10%;
+    display: flex; 
+    position: relative;
+    width: 100%;
+    padding: 10px 5%;
     height: 70px;
+
     background-color: lightgray;
     align-items:center;
+}
+
+.cabecalho__menu{
+    margin-left: auto;
 }
 
 .cabecalho__menu___link {
     color: lightslategray;
     font-weight: bold;
     padding: 0.5rem 1.5rem;
-    text-decoration: none;
-    
+    text-decoration: none;  
 }
 .cabecalho__menu___link:hover {
     color: #ba181b;
@@ -48,7 +53,10 @@ html, body {
     border-top: 1px solid #ba181b;
 }
 
-
+#btn-check,#btn-menu{
+     visibility: hidden;
+     
+} 
 /* FIM CABEÇALHO */
 
 
@@ -221,7 +229,40 @@ html, body {
 
 @media screen and (max-width: 800px) {
 
-    
+    #cabecalho {
+        justify-content: flex-start;
+    }
+    .cabecalho__menu{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items: flex-end;
+        left: 0;
+        background-color: lightgray;
+        z-index: 1;
+        top:70px;
+        visibility: hidden;
+        width: 100%;
+        line-height: 2rem;
+        padding: 5px;
+    }
+
+
+    #btn-menu {
+        position: absolute;
+        visibility: visible;
+        font-size: 2rem;
+        margin-right: 10px;
+        right: 0;
+    }
+    #btn-menu:hover{
+        color: #ba181b;
+        cursor: pointer;
+    }
+    #btn-check:checked ~ .cabecalho__menu{
+        visibility: visible;
+        right: 0;
+    } 
 
     .galeria {
        height: 300px;
@@ -246,3 +287,4 @@ html, body {
     }
     
 }
+
